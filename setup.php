@@ -56,7 +56,7 @@ class Setup
      *
      * @return bool
      */
-    private static function renameFile($from, $to)
+    private static function moveFile($from, $to)
     {
         if (rename($from, $to)) {
             self::log("Successfully moved file " . $from . " to " . $to);
