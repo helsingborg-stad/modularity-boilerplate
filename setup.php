@@ -11,6 +11,12 @@ class Setup
         if (self::$config = self::getConfig()) {
             self::updateFile(__DIR__ . '/composer.json');
 
+            //Test move
+            self::moveFile(
+                __DIR__ . '/modularity-recommend.php',
+                __DIR__ . '/modularity-boilerplate.php'
+            );
+
             //Remove me
             if (self::remove()) {
                 self::log("All done! Now go and make something beautiful!", 'info');
