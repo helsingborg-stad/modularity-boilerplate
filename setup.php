@@ -4,27 +4,32 @@ class Setup
 {
     private static $config;
 
-    public function __construct() {
+    public function __construct()
+    {
         self::log("Starting setup");
         self::$config = self::getConfig();
 
         if (self::$config) {
-            self::updateComposer(self::$config);
+            self::updateFile(__DIR__ . '/composer.json');
+        } else {
+            self::err("Config file seems to be empty");
         }
     }
 
     /**
      * Replace contents of composer json
      *
-     * @return bool
+     * @return void
      */
-    private static function updateComposer()
+    private static function updateFile($filename)
     {
-        return self::makeReplacements(
-            "{{BPREPLACE-SLUG}}",
-            self::$config->slug,
-            __DIR__ . '/composer.json'
-        );
+        foreach (self::$config as $key => $value) {
+            self::makeReplacements(
+                "{{BPREPLACE" . strtoupper($key) . "}}",
+                $value,
+                $filename
+            );
+        }
     }
 
     /**
@@ -48,8 +53,6 @@ class Setup
             $to,
             file_get_contents($filename)
         );
-
-        var_dump($content); 
 
         if (!file_put_contents($filename, $content)) {
             self::err("File is unwriteable: " . $filename);

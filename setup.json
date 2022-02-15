@@ -4,5 +4,7 @@
   "slug": "boilerplate",
   "namespace": "ModularityBoilerplate",
   "capsConstant": "MODULARITY_BOILERPLATE",
-  "author": "Firstname Lastname @ Company"
+  "author": "Firstname Lastname @ Company",
+  "authoremail": "firstname.lastname@company.com",
+  "github": "githubname"
 }

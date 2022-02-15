@@ -1,12 +1,12 @@
 {
     "name": "helsingborg-stad/modularity-{{BPREPLACESLUG}}",
-    "description": "Modularity RekAI",
+    "description": "{{BPREPLACEDESCRIPTION}}",
     "type": "wordpress-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "Sebastian Thulin",
-            "email": "sebastian.thulin@helsingborg.se"
+            "name": "{{BPREPLACEAUTHOR}}",
+            "email": "{{BPREPLACEAUTHOREMAIL}}"
         }
     ],
     "minimum-stability": "stable",
@@ -14,7 +14,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/modularity-recommend.git"
+            "url": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.git"
         }
     ]
 }
