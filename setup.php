@@ -49,6 +49,8 @@ class Setup
             file_get_contents($filename)
         );
 
+        var_dump($content); 
+
         if (!file_put_contents($filename, $content)) {
             self::err("File is unwriteable: " . $filename);
             return false;

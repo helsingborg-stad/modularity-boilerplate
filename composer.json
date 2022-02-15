@@ -1,5 +1,5 @@
 {
-    "name": "helsingborg-stad/modularity-recommend",
+    "name": "helsingborg-stad/modularity-{{BPREPLACESLUG}}",
     "description": "Modularity RekAI",
     "type": "wordpress-plugin",
     "license": "MIT",
