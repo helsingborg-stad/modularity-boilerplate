@@ -11,8 +11,9 @@ class Setup
 
         if (self::$config) {
             self::updateFile(__DIR__ . '/composer.json');
-
-            self::remove(); //Delete this script & config
+            if (self::remove()) {
+                self::log("All done! Now go and make something beautiful!");
+            }
         } else {
             self::err("Config file seems to be empty");
         }
@@ -169,9 +170,10 @@ class Setup
             foreach ($files as $file) {
                 unset($file);
             }
-        } else {
-            self::err("Nothing to delete.");
+            return true;
         }
+        self::err("Nothing to delete.");
+        return false;
     }
 }
 
