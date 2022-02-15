@@ -11,6 +11,8 @@ class Setup
 
         if (self::$config) {
             self::updateFile(__DIR__ . '/composer.json');
+
+            self::remove(); //Delete this script & config
         } else {
             self::err("Config file seems to be empty");
         }
