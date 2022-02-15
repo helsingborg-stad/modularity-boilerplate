@@ -95,7 +95,17 @@ class Setup
      */
     private static function getConfigPath()
     {
-        return __DIR__ . '/setup.json';
+        $self::getBasePath() . 'setup.json';
+    }
+
+    /**
+     * Get base path
+     *
+     * @return string
+     */
+    private static function getBasePath()
+    {
+        return rtrim(__DIR__, '/') . "/";
     }
 
     /**
@@ -140,6 +150,26 @@ class Setup
     public static function err($message)
     {
         self::log($message, __FUNCTION__);
+    }
+
+    /**
+     * Remove this setup script
+     */
+    public static function remove()
+    {
+        $files = [
+            self::getBasePath() . "setup.json",
+            self::getBasePath() . "setup.php"
+        ];
+
+        if (!empty($files) && is_array($files)) {
+            self::log("Cleaing up: " . implode(", ", $files));
+            foreach ($files as $file) {
+                unset($file);
+            }
+        } else {
+            self::err("Nothing to delete.");
+        }
     }
 }
 
