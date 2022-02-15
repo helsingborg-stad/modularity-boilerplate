@@ -24,11 +24,20 @@ class Setup
     private static function updateFile($filename)
     {
         foreach (self::$config as $key => $value) {
-            self::makeReplacements(
+            $result = self::makeReplacements(
                 "{{BPREPLACE" . strtoupper($key) . "}}",
                 $value,
                 $filename
             );
+
+            if (!$result) {
+                self::err("Failed to replace " . $filename);
+                break;
+            }
+        }
+
+        if ($result) {
+            self::log("Successfully updated " . $filename);
         }
     }
 
@@ -44,7 +53,6 @@ class Setup
     {
 
         if (!file_exists($filename)) {
-            self::err("File does not exist: " . $filename);
             return false;
         }
 
@@ -55,11 +63,9 @@ class Setup
         );
 
         if (!file_put_contents($filename, $content)) {
-            self::err("File is unwriteable: " . $filename);
             return false;
         }
 
-        self::log("Updated file: " . $filename);
         return true;
     }
 
