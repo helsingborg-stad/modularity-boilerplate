@@ -46,6 +46,16 @@ class Setup
     }
 
     /**
+     * Move a file
+     *
+     * @return bool
+     */
+    private static function renameFile($from, $to)
+    {
+        return rename($from, $to);
+    }
+
+    /**
      * Replace contents of file
      *
      * @param string $from
