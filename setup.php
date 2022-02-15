@@ -173,7 +173,9 @@ class Setup
         if (!empty($files) && is_array($files)) {
             self::log("Cleaing up: " . implode(", ", $files));
             foreach ($files as $file) {
-                unset($file);
+                if (!unlink($file)) {
+                    self::err("Failed to remove " . $file);
+                }
             }
             return true;
         }
