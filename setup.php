@@ -6,7 +6,7 @@ class Setup
 
     public function __construct()
     {
-        self::log("Starting setup");
+        self::log("Starting setup", 'info');
         self::$config = self::getConfig();
 
         if (self::$config) {
@@ -72,19 +72,18 @@ class Setup
     /**
      * Get config
      *
-     * @return void
+     * @return bool | string
      */
     public static function getConfig()
     {
-        self::log("Fetching config file from: " . self::getConfigPath());
         if (file_exists(self::getConfigPath())) {
-            self::log("Found config file");
+            self::log("Found config file in " . self::getConfigPath());
             return (object) json_decode(
                 file_get_contents(self::getConfigPath()),
                 true
             );
         } else {
-            self::log("Could not find setup.json");
+            self::log("Could not find config file in " . self::getConfigPath());
         }
         return false;
     }
@@ -102,16 +101,45 @@ class Setup
     /**
      * Log message to user
      *
-     * @param string $message
+     * @param string $message   The message
+     * @param string $type    Should not be changed
      */
-    public static function log($log, $prefix = "[LOG]")
+    public static function log($message, $type = null, $trimPath = true)
     {
-        echo $prefix . " " . $log . "\n";
+        //Trim path in log msg, to make them readable
+        if ($trimPath === true) {
+            $message = str_replace(__DIR__, '', $message);
+        }
+
+        //Set type
+        if (is_null($type)) {
+            $type = __FUNCTION__;
+        }
+
+        //Print
+        echo self::getColor($type) . "[" . strtoupper($type) . "] " . $message . "\n";
     }
 
-    public static function err($log)
+    private static function getColor($type) {
+        if ($type == 'info') {
+            return "\033[0;95m";
+        }
+        if ($type == 'log') {
+            return "\033[0;32m";
+        }
+        if ($type == 'err') {
+            return "\033[0;31m";
+        }
+    }
+
+    /**
+     * Invoke log, but with error prefix.
+     *
+     * @param string $message
+     */
+    public static function err($message)
     {
-        self::log($log, "[ERROR]");
+        self::log($message, __FUNCTION__);
     }
 }
 
