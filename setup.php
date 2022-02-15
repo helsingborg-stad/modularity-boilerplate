@@ -15,7 +15,7 @@ class Setup
                 self::log("All done! Now go and make something beautiful!");
             }
         } else {
-            self::err("Config file seems to be empty");
+            self::log("Exiting setup");
         }
     }
 
@@ -98,7 +98,7 @@ class Setup
      */
     private static function getConfigPath()
     {
-        self::getBasePath() . 'setup.json';
+        return self::getBasePath() . 'setup.json';
     }
 
     /**
