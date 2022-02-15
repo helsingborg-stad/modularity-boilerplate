@@ -1,0 +1,8 @@
+{
+  "name": "Modularity Boilerplate",
+  "description": "A boilerplate repo for modules.",
+  "slug": "boilerplate",
+  "namespace": "ModularityBoilerplate",
+  "capsConstant": "MODULARITY_BOILERPLATE",
+  "author": "Firstname Lastname @ Company"
+}

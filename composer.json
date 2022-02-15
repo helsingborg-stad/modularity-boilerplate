@@ -1,0 +1,20 @@
+{
+    "name": "helsingborg-stad/modularity-recommend",
+    "description": "Modularity RekAI",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian Thulin",
+            "email": "sebastian.thulin@helsingborg.se"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/modularity-recommend.git"
+        }
+    ]
+}
