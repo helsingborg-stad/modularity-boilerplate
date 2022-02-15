@@ -13,7 +13,7 @@ class Setup
 
             //Remove me
             if (self::remove()) {
-                self::log("All done! Now go and make something beautiful!");
+                self::log("All done! Now go and make something beautiful!", 'info');
             }
         } else {
             self::log("Exiting setup");
@@ -139,7 +139,8 @@ class Setup
      *
      * @param string $type
      */
-    private static function getColor($type) {
+    private static function getColor($type)
+    {
         if ($type == 'info') {
             return "\033[0;95m";
         }
