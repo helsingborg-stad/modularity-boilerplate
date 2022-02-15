@@ -74,7 +74,7 @@ class Setup
      * @param string $filename
      * @return bool
      */
-    public static function makeReplacements($from, $to, $filename)
+    private static function makeReplacements($from, $to, $filename)
     {
 
         if (!file_exists($filename)) {
@@ -99,7 +99,7 @@ class Setup
      *
      * @return bool | string
      */
-    public static function getConfig()
+    private static function getConfig()
     {
         if (file_exists(self::getConfigPath())) {
             self::log("Found config file in " . self::getConfigPath());
@@ -139,7 +139,7 @@ class Setup
      * @param string $message   The message
      * @param string $type    Should not be changed
      */
-    public static function log($message, $type = null, $trimPath = true)
+    private static function log($message, $type = null, $trimPath = true)
     {
         //Trim path in log msg, to make them readable
         if ($trimPath === true) {
@@ -178,7 +178,7 @@ class Setup
      *
      * @param string $message
      */
-    public static function err($message)
+    private static function err($message)
     {
         self::log($message, __FUNCTION__);
     }
@@ -186,7 +186,7 @@ class Setup
     /**
      * Remove this setup script
      */
-    public static function remove()
+    private static function remove()
     {
         $files = [
             self::getBasePath() . "setup.json",
