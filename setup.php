@@ -52,7 +52,12 @@ class Setup
      */
     private static function renameFile($from, $to)
     {
-        return rename($from, $to);
+        if (rename($from, $to)) {
+            self::log("Successfully moved file " . $from . " to " . $to);
+            return true;
+        }
+        self::err("Could not move file " . $from . " to " . $to);
+        return false;
     }
 
     /**
