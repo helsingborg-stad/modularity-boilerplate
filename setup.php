@@ -98,7 +98,7 @@ class Setup
      */
     private static function getConfigPath()
     {
-        $self::getBasePath() . 'setup.json';
+        self::getBasePath() . 'setup.json';
     }
 
     /**
@@ -133,6 +133,11 @@ class Setup
         echo self::getColor($type) . "[" . strtoupper($type) . "] " . $message . "\n";
     }
 
+    /**
+     * Get colorcoding for messages
+     *
+     * @param string $type
+     */
     private static function getColor($type) {
         if ($type == 'info') {
             return "\033[0;95m";
