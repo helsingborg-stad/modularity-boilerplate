@@ -7,10 +7,11 @@ class Setup
     public function __construct()
     {
         self::log("Starting setup", 'info');
-        self::$config = self::getConfig();
 
-        if (self::$config) {
+        if (self::$config = self::getConfig()) {
             self::updateFile(__DIR__ . '/composer.json');
+
+            //Remove me
             if (self::remove()) {
                 self::log("All done! Now go and make something beautiful!");
             }
@@ -143,7 +144,7 @@ class Setup
             return "\033[0;95m";
         }
         if ($type == 'log') {
-            return "\033[0;34m";
+            return "\033[0;32m";
         }
         if ($type == 'err') {
             return "\033[0;31m";
