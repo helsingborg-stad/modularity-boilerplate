@@ -143,7 +143,7 @@ class Setup
             return "\033[0;95m";
         }
         if ($type == 'log') {
-            return "\033[0;32m";
+            return "\033[0;34m";
         }
         if ($type == 'err') {
             return "\033[0;31m";
