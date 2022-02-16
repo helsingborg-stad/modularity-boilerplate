@@ -80,7 +80,7 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
         //Register custom css
         wp_register_script(
             'modularity-{{BPREPLACESLUG}}',
-            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . CacheBust::name('css/modularity-{{BPREPLACESLUG}}.css'),
+            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . CacheBust::name('js/modularity-{{BPREPLACESLUG}}.js'),
             null,
             '1.0.0'
         );
