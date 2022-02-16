@@ -3,10 +3,14 @@
 class Setup
 {
     private static $config;
+    private static $folders = ['source'];
+    private static $searchableFileTypes = ['php'];
 
     public function __construct()
     {
         self::log("Starting setup", 'info');
+        var_dump(self::getFilesList());
+        die;
 
         if (self::$config = self::getConfig()) {
             self::updateFile(__DIR__ . '/composer.json');
@@ -24,6 +28,40 @@ class Setup
         } else {
             self::log("Exiting setup");
         }
+    }
+
+    private static function getFilesList() {
+        $files = [];
+
+        if (empty(self::$folders) || !is_array(self::$folders)) {
+            self::err("No folders to scan for replacements.");
+            return $files;
+        }
+
+        foreach (self::$folders as $folder) {
+            $iterator   = new \RecursiveIteratorIterator(
+                new \RecursiveDirectoryIterator(
+                    __DIR__ . '/' . $folder,
+                    \RecursiveDirectoryIterator::SKIP_DOTS
+                ),
+            );
+            foreach ($iterator as $info) {
+
+                if (!$info->isFile()) {
+                    continue;
+                }
+
+                if ($info->isFile() && $fileType = $info->getExtension()) {
+                    if (!in_array($fileType, self::$searchableFileTypes)) {
+                        continue;
+                    }
+                }
+
+                $files[] = $info->getPathname();
+            }
+        }
+
+        return $files;
     }
 
     /**
