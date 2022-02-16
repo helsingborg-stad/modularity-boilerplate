@@ -1,5 +1,5 @@
 {
-    "name": "helsingborg-stad/modularity-{{BPREPLACESLUG}}",
+    "name": "{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}",
     "description": "{{BPREPLACEDESCRIPTION}}",
     "type": "wordpress-plugin",
     "license": "MIT",
