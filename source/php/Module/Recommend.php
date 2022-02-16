@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityRecommend\Module;
+namespace {{BPREPLACENAMESPACE}}\Module;
 
 use ModularityRecommend\Helper\CacheBust;
 

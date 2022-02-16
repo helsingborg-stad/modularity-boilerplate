@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityRecommend\Admin;
+namespace {{BPREPLACENAMESPACE}}\Admin;
 
 /**
  * Class RekAI

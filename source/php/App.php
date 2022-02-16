@@ -1,8 +1,8 @@
 <?php
 
-namespace ModularityRecommend;
+namespace {{BPREPLACENAMESPACE}};
 
-use ModularityRecommend\Helper\CacheBust;
+use {{BPREPLACENAMESPACE}}\Helper\CacheBust;
 
 class App
 {

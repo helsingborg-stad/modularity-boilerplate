@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityRecommend\Helper;
+namespace {{BPREPLACENAMESPACE}}\Helper;
 
 class CacheBust
 {
