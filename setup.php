@@ -32,7 +32,7 @@ class Setup
 {
     private static $config;
     private static $folders = ['source'];
-    private static $searchableFileTypes = ['php'];
+    private static $searchableFileTypes = ['php', 'css', 'js'];
 
     public function __construct()
     {
