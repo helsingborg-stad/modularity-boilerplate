@@ -32,7 +32,7 @@ class Setup
             $filesToReplace = self::getFilesList();
             if (is_array($filesToReplace) && !empty($filesToReplace)) {
                 foreach ($filesToReplace as $file) {
-                    self::updateFile(__DIR__ . '/composer.json');
+                    self::updateFile($file);
                 }
             } else {
                 self::err("No files found to replace");
