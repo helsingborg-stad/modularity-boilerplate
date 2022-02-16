@@ -327,8 +327,6 @@ class Setup
      */
     private static function remove()
     {
-        return true; //Disable temporary for now (dev)
-
         $files = [
             self::getBasePath() . "setup.json",
             self::getBasePath() . "setup.php"
