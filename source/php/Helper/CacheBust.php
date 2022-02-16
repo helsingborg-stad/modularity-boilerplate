@@ -27,16 +27,15 @@ class CacheBust
      */
     public static function getRevManifest()
     {
-        $jsonPath = MODULARITYRECOMMEND_PATH . apply_filters(
-            'ModularityRecommend/Helper/CacheBust/RevManifestPath',
+        $jsonPath = {{BPREPLACECAPSCONSTANT}} . apply_filters(
+            '{{BPREPLACENAMESPACE}}/Helper/CacheBust/RevManifestPath',
             'dist/manifest.json'
         );
 
         if (file_exists($jsonPath)) {
             return json_decode(file_get_contents($jsonPath), true);
         } elseif (WP_DEBUG) {
-            echo '<div style="color:red">Error: Assets not built. Go to ' . MODULARITYRECOMMEND_PATH . ' and run gulp. See ' . MODULARITYRECOMMEND_PATH . 'README.md for more info.</div>';
+            echo '<div style="color:red">Error: Assets not built. Go to ' . {{BPREPLACECAPSCONSTANT}} . ' and run gulp. See ' . {{BPREPLACECAPSCONSTANT}} . 'README.md for more info.</div>';
         }
     }
 }
-
