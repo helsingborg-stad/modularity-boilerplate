@@ -55,6 +55,7 @@ class Setup
             self::updateFile(self::getBasePath() . 'composer.json');
             self::updateFile(self::getBasePath() . 'webpack.config.js');
             self::updateFile(self::getBasePath() . 'README-boilerplate.md');
+            self::updateFile(self::getBasePath() . 'modularity-boilerplate.php');
 
             //Remove readme.md & replace with template
             self::removeFile(self::getBasePath() . 'README.md');
