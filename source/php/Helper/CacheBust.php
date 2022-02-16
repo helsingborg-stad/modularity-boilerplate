@@ -27,7 +27,7 @@ class CacheBust
      */
     public static function getRevManifest()
     {
-        $jsonPath = {{BPREPLACECAPSCONSTANT}} . apply_filters(
+        $jsonPath = {{BPREPLACECAPSCONSTANT}}_PATH . apply_filters(
             '{{BPREPLACENAMESPACE}}/Helper/CacheBust/RevManifestPath',
             'dist/manifest.json'
         );
@@ -35,7 +35,7 @@ class CacheBust
         if (file_exists($jsonPath)) {
             return json_decode(file_get_contents($jsonPath), true);
         } elseif (WP_DEBUG) {
-            echo '<div style="color:red">Error: Assets not built. Go to ' . {{BPREPLACECAPSCONSTANT}} . ' and run gulp. See ' . {{BPREPLACECAPSCONSTANT}} . 'README.md for more info.</div>';
+            echo '<div style="color:red">Error: Assets not built. Go to ' . {{BPREPLACECAPSCONSTANT}}_PATH . ' and run gulp. See ' . {{BPREPLACECAPSCONSTANT}}_PATH . 'README.md for more info.</div>';
         }
     }
 }
