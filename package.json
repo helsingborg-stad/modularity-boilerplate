@@ -1,18 +1,18 @@
 {
-  "name": "modularity-{BPREPLACESLUG}}",
+  "name": "modularity-{{BPREPLACESLUG}}",
   "version": "1.0.0",
   "description": "{{BPREPLACEDESCRIPTION}}",
   "main": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{BPREPLACESLUG}}"
+    "url": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}"
   },
   "author": "{{BPREPLACEAUTHOR}}",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{BPREPLACESLUG}}/issues"
+    "url": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/issues"
   },
-  "homepage": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{BPREPLACESLUG}}",
+  "homepage": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "cross-env NODE_ENV=development webpack --watch",
