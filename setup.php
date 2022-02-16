@@ -50,20 +50,25 @@ class Setup
                 self::err("No files found to replace");
             }
 
+            //Manually replacement targets
+            self::updateFile(self::getBasePath() . 'package.json');
+            self::updateFile(self::getBasePath() . 'composer.json');
+            self::updateFile(self::getBasePath() . 'webpack.config.json');
+
             //Rename main file
             self::moveFile(
-                __DIR__ . '/modularity-boilerplate.php',
-                __DIR__ . '/modularity-' . self::$config->slug . '.php'
+                self::getBasePath() . 'modularity-boilerplate.php',
+                self::getBasePath() . 'modularity-' . self::$config->slug . '.php'
             );
 
             //Rename module files
             self::moveFile(
-                __DIR__ . '/source/php/Module/Boilerplate.php',
-                __DIR__ . '/source/php/Module/' . self::$config->slugcamelcase . '.php'
+                self::getBasePath() . 'source/php/Module/Boilerplate.php',
+                self::getBasePath() . 'source/php/Module/' . self::$config->slugcamelcase . '.php'
             );
             self::moveFile(
-                __DIR__ . '/source/php/Module/views/boilerplate.blade.php',
-                __DIR__ . '/source/php/Module/views/' . self::$config->slug . '.blade.php'
+                self::getBasePath() . 'source/php/Module/views/boilerplate.blade.php',
+                self::getBasePath() . 'source/php/Module/views/' . self::$config->slug . '.blade.php'
             );
 
             //Remove me
@@ -92,7 +97,7 @@ class Setup
         foreach (self::$folders as $folder) {
             $iterator   = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator(
-                    __DIR__ . '/' . $folder,
+                    self::getBasePath() . '/' . $folder,
                     \RecursiveDirectoryIterator::SKIP_DOTS
                 ),
             );
