@@ -2,7 +2,7 @@
 
 namespace {{BPREPLACENAMESPACE}}\Module;
 
-use ModularityRecommend\Helper\CacheBust;
+use {{BPREPLACENAMESPACE}}\Helper\CacheBust;
 
 /**
  * Class {{BPREPLACESLUGCAMELCASE}
