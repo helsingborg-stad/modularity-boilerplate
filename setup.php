@@ -80,6 +80,16 @@ class Setup
                 self::getBasePath() . 'source/php/Module/views/' . self::$config->slug . '.blade.php'
             );
 
+            //Rename asset source files
+            self::moveFile(
+                self::getBasePath() . 'source/js/modularity-boilerplate.js',
+                self::getBasePath() . 'source/js/modularity-' . self::$config->slug . '.js'
+            );
+            self::moveFile(
+                self::getBasePath() . 'source/sass/modularity-boilerplate.scss',
+                self::getBasePath() . 'source/sass/modularity-' . self::$config->slug . '.scss'
+            );
+
             //Remove me
             if (self::remove()) {
                 self::log("All done! Now go and make something beautiful!", 'info');
