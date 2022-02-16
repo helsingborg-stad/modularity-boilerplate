@@ -3,7 +3,6 @@ title: "README"
 date: 2021-05-27
 draft: false
 layout: default
-parent: Boilerplates
 ---
 
 <!-- SHIELDS -->
@@ -38,9 +37,7 @@ parent: Boilerplates
 
 ## About Modularity Boilerplate
 
-[![Modularity Boilerplate Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
+Create a new module at record speed! Read the installation instructions below. Setup files will automaticly be removed upon setup.
 
 ### Built With
 
@@ -48,10 +45,6 @@ Here's a blank template to get started:
 * NPM
 * Webpack
 * Modularity
-
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
@@ -74,20 +67,18 @@ composer require helsingborg-stad/modularity
 ```sh
 git clone https://github.com/helsingborg-stad/modularity-boilerplate.git
 ```
-2. Install NPM and composer packages
+2. Edit setup.json file, add your details
+```sh
+nano setup.json
+```
+3. Run setup procedure
+```sh
+php setup.php
+```
+4. Install NPM and composer packages
 ```sh
 php build.php
 ```
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-## Deploy
-
-Instructions for deploys.
 
 ## Roadmap
 
