@@ -5,8 +5,8 @@ namespace {{BPREPLACENAMESPACE}}\Module;
 use ModularityRecommend\Helper\CacheBust;
 
 /**
- * Class Recommend
- * @package Recommend\Module
+ * Class {{BPREPLACESLUGCAMELCASE}
+ * @package {{BPREPLACESLUGCAMELCASE}\Module
  */
 class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
 {
