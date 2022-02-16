@@ -265,13 +265,15 @@ class Setup
      */
     private static function remove()
     {
+        return true; //Disable temporary for now (dev)
+
         $files = [
             self::getBasePath() . "setup.json",
             self::getBasePath() . "setup.php"
         ];
 
         if (!empty($files) && is_array($files)) {
-            self::log("Cleaing up: " . implode(", ", $files));
+            self::log("Cleaing up (self destruct): " . implode(", ", $files));
             foreach ($files as $file) {
                 if (!unlink($file)) {
                     self::err("Failed to remove " . $file);
