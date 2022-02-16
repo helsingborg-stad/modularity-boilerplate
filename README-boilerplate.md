@@ -74,9 +74,13 @@ composer require helsingborg-stad/modularity
 ```sh
 git clone https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.git
 ```
-2. Install NPM and composer packages
+2. Install and build NPM packages
 ```sh
-php build.php
+npm install && npm run build
+```
+3. Install composer packages
+```sh
+composer install
 ```
 
 ## Usage

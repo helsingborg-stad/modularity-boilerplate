@@ -75,9 +75,13 @@ nano setup.json
 ```sh
 php setup.php
 ```
-4. Install NPM and composer packages
+4. Install and build NPM packages
 ```sh
-php build.php
+npm install && npm run build
+```
+5. Install composer packages
+```sh
+composer install
 ```
 
 ## Roadmap
