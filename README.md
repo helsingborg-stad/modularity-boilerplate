@@ -17,9 +17,9 @@ parent: Boilerplates
 <p>
   A boilerplate repo for modules.
   <br />
-  <a href="https://github.com/githubname/modularity-boilerplate/issues">Report Bug</a>
+  <a href="https://github.com/helsingborg-stad/modularity-boilerplate/issues">Report Bug</a>
   ·
-  <a href="https://github.com/githubname/modularity-boilerplate/issues">Request Feature</a>
+  <a href="https://github.com/helsingborg-stad/modularity-boilerplate/issues">Request Feature</a>
 </p>
 
 ## Table of Contents
@@ -71,7 +71,7 @@ composer require helsingborg-stad/modularity
 
 1. Clone the repo
 ```sh
-git clone https://github.com/githubname/modularity-boilerplate.git
+git clone https://github.com/helsingborg-stad/modularity-boilerplate.git
 ```
 2. Install NPM and composer packages
 ```sh
@@ -113,14 +113,14 @@ Distributed under the [MIT License][license-url].
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/githubname/modularity-boilerplate.svg?style=flat-square
-[contributors-url]: https://github.com/githubname/modularity-boilerplate/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/githubname/modularity-boilerplate.svg?style=flat-square
-[forks-url]: https://github.com/githubname/modularity-boilerplate/network/members
-[stars-shield]: https://img.shields.io/github/stars/githubname/modularity-boilerplate.svg?style=flat-square
-[stars-url]: https://github.com/githubname/modularity-boilerplate/stargazers
-[issues-shield]: https://img.shields.io/github/issues/githubname/modularity-boilerplate.svg?style=flat-square
-[issues-url]: https://github.com/githubname/modularity-boilerplate/issues
-[license-shield]: https://img.shields.io/github/license/githubname/modularity-boilerplate.svg?style=flat-square
-[license-url]: https://raw.githubusercontent.com/githubname/modularity-boilerplate/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/helsingborg-stad/modularity-boilerplate.svg?style=flat-square
+[contributors-url]: https://github.com/helsingborg-stad/modularity-boilerplate/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/helsingborg-stad/modularity-boilerplate.svg?style=flat-square
+[forks-url]: https://github.com/helsingborg-stad/modularity-boilerplate/network/members
+[stars-shield]: https://img.shields.io/github/stars/helsingborg-stad/modularity-boilerplate.svg?style=flat-square
+[stars-url]: https://github.com/helsingborg-stad/modularity-boilerplate/stargazers
+[issues-shield]: https://img.shields.io/github/issues/helsingborg-stad/modularity-boilerplate.svg?style=flat-square
+[issues-url]: https://github.com/helsingborg-stad/modularity-boilerplate/issues
+[license-shield]: https://img.shields.io/github/license/helsingborg-stad/modularity-boilerplate.svg?style=flat-square
+[license-url]: https://raw.githubusercontent.com/helsingborg-stad/modularity-boilerplate/master/LICENSE
 [product-screenshot]: images/screenshot.png
