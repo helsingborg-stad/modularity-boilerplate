@@ -2,10 +2,6 @@
 
 namespace {{BPREPLACENAMESPACE}}\Admin;
 
-/**
- * Class RekAI
- * @package ModularityRecommend
- */
 class Settings
 {
     public function __construct() {
@@ -20,9 +16,9 @@ class Settings
     {
         if (function_exists('acf_add_options_sub_page')) {
             acf_add_options_sub_page(array(
-                'page_title'  => _x("RekAI", "ACF", 'modularity-recommend'),
-                'menu_title'  => __("RekAI", "RekAI", 'modularity-recommend'),
-                'menu_slug'   => 'modularity-recommend-settings',
+                'page_title'  => __("{{BPREPLACENAME}}", 'modularity-{{BPREPLACESLUG}}'),
+                'menu_title'  => __("{{BPREPLACENAME}} Settings", 'modularity-{{BPREPLACESLUG}}'),
+                'menu_slug'   => 'modularity-{{BPREPLACESLUG}}-settings',
                 'parent_slug' => 'options-general.php',
                 'capability'  => 'manage_options'
             ));
