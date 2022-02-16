@@ -62,7 +62,7 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
         //Register custom css
         wp_register_style(
             'modularity-{{BPREPLACESLUG}}',
-            MODULARITYRECOMMEND_URL . '/dist/' . CacheBust::name('css/modularity-{{BPREPLACESLUG}}.css'),
+            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . CacheBust::name('css/modularity-{{BPREPLACESLUG}}.css'),
             null,
             '1.0.0'
         );
@@ -80,7 +80,7 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
         //Register custom css
         wp_register_script(
             'modularity-{{BPREPLACESLUG}}',
-            MODULARITYRECOMMEND_URL . '/dist/' . CacheBust::name('css/modularity-{{BPREPLACESLUG}}.css'),
+            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . CacheBust::name('css/modularity-{{BPREPLACESLUG}}.css'),
             null,
             '1.0.0'
         );
