@@ -14,6 +14,17 @@
  *
  * This script will self destruct when done.
  * Track with git to be able to reverse changes.
+ *
+ * Avabile replacement keys are:
+ * {{BPREPLACENAME}}
+ * {{BPREPLACEDESCRIPTION}}
+ * {{BPREPLACESLUG}}
+ * {{BPREPLACENAMESPACE}}
+ * {{BPREPLACECAPSCONSTANT}}
+ * {{BPREPLACEAUTHOR}}
+ * {{BPREPLACEAUTHOREMAIL}}
+ * {{BPREPLACEGITHUB}}
+ *
  */
 
 class Setup
@@ -279,7 +290,7 @@ class Setup
                     self::err("Failed to remove " . $file);
                 }
             }
-            return true;
+            return true; 
         }
         self::err("Nothing to delete.");
         return false;
