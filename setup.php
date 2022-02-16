@@ -19,6 +19,7 @@
  * {{BPREPLACENAME}}
  * {{BPREPLACEDESCRIPTION}}
  * {{BPREPLACESLUG}}
+ * {{BPREPLACESLUGCAMELCASE}}
  * {{BPREPLACENAMESPACE}}
  * {{BPREPLACECAPSCONSTANT}}
  * {{BPREPLACEAUTHOR}}
@@ -53,6 +54,16 @@ class Setup
             self::moveFile(
                 __DIR__ . '/modularity-boilerplate.php',
                 __DIR__ . '/modularity-' . self::$config->slug . '.php'
+            );
+
+            //Rename module files
+            self::moveFile(
+                __DIR__ . '/source/php/Module/Boilerplate.php',
+                __DIR__ . '/source/php/Module/' . self::$config->slugcamelcase . '.php'
+            );
+            self::moveFile(
+                __DIR__ . '/source/php/Module/views/boilerplate.blade.php',
+                __DIR__ . '/source/php/Module/views/' . self::$config->slug . '.blade.php'
             );
 
             //Remove me

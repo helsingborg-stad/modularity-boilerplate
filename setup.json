@@ -2,6 +2,7 @@
   "name": "Modularity Boilerplate",
   "description": "A boilerplate repo for modules.",
   "slug": "boilerplate",
+  "slugcamelcase": "Boilerplate",
   "namespace": "ModularityBoilerplate",
   "capsConstant": "MODULARITY_BOILERPLATE",
   "author": "Firstname Lastname @ Company",

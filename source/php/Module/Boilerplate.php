@@ -8,16 +8,16 @@ use ModularityRecommend\Helper\CacheBust;
  * Class Recommend
  * @package Recommend\Module
  */
-class Recommend extends \Modularity\Module
+class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
 {
     public $slug = 'recommend';
     public $supports = array();
 
     public function init()
     {
-        $this->nameSingular = __("Recommend", 'modularity-recommend');
-        $this->namePlural = __("Recommend", 'modularity-recommend');
-        $this->description = __("Recommend view for links.", 'modularity-recommend');
+        $this->nameSingular = __("{{BPREPLACESLUGCAMELCASE}}", 'modularity-{{BPREPLACESLUG}}');
+        $this->namePlural = __("{{BPREPLACESLUGCAMELCASE}}", 'modularity-{{BPREPLACESLUG}}');
+        $this->description = __("{{BPREPLACEDESCRIPTION}}", 'modularity-{{BPREPLACESLUG}}');
     }
 
     /**
@@ -35,27 +35,11 @@ class Recommend extends \Modularity\Module
 
         //Translations
         $data['lang'] = (object) array(
-            'noData' => __(
-                "No static links provided to recommendation module. AI suggestion is off.",
-                'modularity-recommend'
+            'info' => __(
+                "Hey! This is your new module. Let's get going.",
+                'modularity-{{BPREPLACESLUG}}'
             )
         );
-
-        //Get permalink, reformat to object
-        if (!empty($data['recommendLinkList'])) {
-            $data['recommendLinkList'] = array_map(function ($item) {
-                if (is_integer($item['recommendTarget'])) {
-                    $item['recommendTarget'] = get_permalink($item['recommendTarget']);
-                }
-                return (object) $item;
-            }, $data['recommendLinkList']);
-        }
-
-        //Enable RekAI
-        $data['enableRekAI'] = get_field('rekai_enable', 'options');
-
-        //Add uid
-        $data['recommendUid'] = "prediction-mount-" . md5(rand());
 
         return $data;
     }
@@ -66,7 +50,7 @@ class Recommend extends \Modularity\Module
      */
     public function template(): string
     {
-        return "recommend.blade.php";
+        return "{{BPREPLACESLUG}}.blade.php";
     }
 
     /**
@@ -77,14 +61,14 @@ class Recommend extends \Modularity\Module
     {
         //Register custom css
         wp_register_style(
-            'modularity-recommend',
-            MODULARITYRECOMMEND_URL . '/dist/' . CacheBust::name('css/modularity-recommend.css'),
+            'modularity-{{BPREPLACESLUG}}',
+            MODULARITYRECOMMEND_URL . '/dist/' . CacheBust::name('css/modularity-{{BPREPLACESLUG}}.css'),
             null,
             '1.0.0'
         );
 
         //Enqueue
-        wp_enqueue_style('modularity-recommend');
+        wp_enqueue_style('modularity-{{BPREPLACESLUG}}');
     }
 
     /**
