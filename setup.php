@@ -9,8 +9,6 @@ class Setup
     public function __construct()
     {
         self::log("Starting setup", 'info');
-        var_dump(self::getFilesList());
-        die;
 
         if (self::$config = self::getConfig()) {
             self::updateFile(__DIR__ . '/composer.json');
@@ -45,8 +43,8 @@ class Setup
                     \RecursiveDirectoryIterator::SKIP_DOTS
                 ),
             );
-            foreach ($iterator as $info) {
 
+            foreach ($iterator as $info) {
                 if (!$info->isFile()) {
                     continue;
                 }
