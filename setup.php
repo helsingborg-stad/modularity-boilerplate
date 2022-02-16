@@ -38,10 +38,10 @@ class Setup
                 self::err("No files found to replace");
             }
 
-            //Test move
+            //Rename main file
             self::moveFile(
-                __DIR__ . '/modularity-recommend.php',
-                __DIR__ . '/modularity-boilerplate.php'
+                __DIR__ . '/modularity-boilerplate.php',
+                __DIR__ . '/modularity-' . self::$config->slug . '.php'
             );
 
             //Remove me
