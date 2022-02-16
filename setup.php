@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * SETUP BOILERPLATE
+ *
+ * 1. Edit the setup.json file with details for your new module.
+ * 2. run 'php setup.php'
+ * 3. run 'php build.php'
+ *
+ * All keys in setup.json are transformed to keys according to the following pattern
+ * {{BPREPLACE[JSONKEY]}}
+ *
+ * [JSONKEY] is replaced by an uppercase version of the key.
+ *
+ */
+
 class Setup
 {
     private static $config;
@@ -8,10 +22,19 @@ class Setup
 
     public function __construct()
     {
-        self::log("Starting setup", 'info');
+        self::info("Starting setup");
 
         if (self::$config = self::getConfig()) {
-            self::updateFile(__DIR__ . '/composer.json');
+
+            //Traverse directories and make replacements
+            $filesToReplace = self::getFilesList();
+            if (is_array($filesToReplace) && !empty($filesToReplace)) {
+                foreach ($filesToReplace as $file) {
+                    self::updateFile(__DIR__ . '/composer.json');
+                }
+            } else {
+                self::err("No files found to replace");
+            }
 
             //Test move
             self::moveFile(
@@ -28,7 +51,13 @@ class Setup
         }
     }
 
-    private static function getFilesList() {
+    /**
+     * Get files lists
+     *
+     * @return array
+     */
+    private static function getFilesList()
+    {
         $files = [];
 
         if (empty(self::$folders) || !is_array(self::$folders)) {
@@ -215,6 +244,16 @@ class Setup
      * @param string $message
      */
     private static function err($message)
+    {
+        self::log($message, __FUNCTION__);
+    }
+
+    /**
+     * Invoke log, but with info prefix.
+     *
+     * @param string $message
+     */
+    private static function info($message)
     {
         self::log($message, __FUNCTION__);
     }
