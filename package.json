@@ -1,18 +1,18 @@
 {
-  "name": "modularity-recommend",
+  "name": "modularity-{BPREPLACESLUG}}",
   "version": "1.0.0",
-  "description": "Modularity RekAI",
+  "description": "{{BPREPLACEDESCRIPTION}}",
   "main": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/helsingborg-stad/modularity-recommend"
+    "url": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{BPREPLACESLUG}}"
   },
-  "author": "Sebastian Thulin",
+  "author": "{{BPREPLACEAUTHOR}}",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/helsingborg-stad/modularity-recommend/issues"
+    "url": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{BPREPLACESLUG}}/issues"
   },
-  "homepage": "https://github.com/helsingborg-stad/modularity-recommend",
+  "homepage": "https://github.com/{{BPREPLACEGITHUB}}/modularity-{BPREPLACESLUG}}",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "cross-env NODE_ENV=development webpack --watch",
