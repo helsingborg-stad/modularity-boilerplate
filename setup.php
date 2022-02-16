@@ -54,6 +54,14 @@ class Setup
             self::updateFile(self::getBasePath() . 'package.json');
             self::updateFile(self::getBasePath() . 'composer.json');
             self::updateFile(self::getBasePath() . 'webpack.config.json');
+            self::updateFile(self::getBasePath() . 'README-boilerplate.md');
+
+            //Remove readme.md & replace with template
+            self::removeFile(self::getBasePath() . 'README.md');
+            self::moveFile(
+                self::getBasePath() . 'README-boilerplate.md',
+                self::getBasePath() . 'README.md'
+            );
 
             //Rename main file
             self::moveFile(
@@ -97,7 +105,7 @@ class Setup
         foreach (self::$folders as $folder) {
             $iterator   = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator(
-                    self::getBasePath() . '/' . $folder,
+                    self::getBasePath() . $folder,
                     \RecursiveDirectoryIterator::SKIP_DOTS
                 ),
             );
@@ -288,6 +296,20 @@ class Setup
     }
 
     /**
+     * Remove a file
+     *
+     * @return bool
+     */
+    private static function deleteFile($file) {
+        if (!unlink($file)) {
+            self::err("Failed to remove " . $file);
+            return false;
+        }
+        self::log("Removed file " . $file);
+        return true;
+    }
+
+    /**
      * Remove this setup script
      */
     private static function remove()
@@ -300,13 +322,10 @@ class Setup
         ];
 
         if (!empty($files) && is_array($files)) {
-            self::log("Cleaing up (self destruct): " . implode(", ", $files));
             foreach ($files as $file) {
-                if (!unlink($file)) {
-                    self::err("Failed to remove " . $file);
-                }
+                self::deleteFile($file);
             }
-            return true; 
+            return true;
         }
         self::err("Nothing to delete.");
         return false;
