@@ -10,7 +10,7 @@ use ModularityRecommend\Helper\CacheBust;
  */
 class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
 {
-    public $slug = 'recommend';
+    public $slug = '{{BPREPLACESLUG}}';
     public $supports = array();
 
     public function init()
@@ -36,7 +36,7 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
         //Translations
         $data['lang'] = (object) array(
             'info' => __(
-                "Hey! This is your new module. Let's get going.",
+                "Hey! This is your new {{BPREPLACENAME}} module. Let's get going.",
                 'modularity-{{BPREPLACESLUG}}'
             )
         );
