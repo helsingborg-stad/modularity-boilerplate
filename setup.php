@@ -172,7 +172,7 @@ class Setup
     private static function moveFile($from, $to)
     {
         if (rename($from, $to)) {
-            self::log("Successfully moved file " . $from . " to " . $to);
+            self::log("Moved file " . $from . " to " . $to);
             return true;
         }
         self::err("Could not move file " . $from . " to " . $to);
