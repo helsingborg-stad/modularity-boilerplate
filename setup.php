@@ -300,7 +300,8 @@ class Setup
      *
      * @return bool
      */
-    private static function deleteFile($file) {
+    private static function removeFile($file)
+    {
         if (!unlink($file)) {
             self::err("Failed to remove " . $file);
             return false;
@@ -323,7 +324,7 @@ class Setup
 
         if (!empty($files) && is_array($files)) {
             foreach ($files as $file) {
-                self::deleteFile($file);
+                self::removeFile($file);
             }
             return true;
         }
