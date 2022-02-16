@@ -12,6 +12,8 @@
  *
  * [JSONKEY] is replaced by an uppercase version of the key.
  *
+ * This script will self destruct when done.
+ * Track with git to be able to reverse changes.
  */
 
 class Setup
