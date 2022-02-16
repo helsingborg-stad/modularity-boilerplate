@@ -1,14 +1,13 @@
 const path = require('path');
-const webpack = require('webpack');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const RemoveEmptyScripts = require('webpack-remove-empty-scripts');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const {getIfUtils, removeEmpty} = require('webpack-config-utils');
-const {ifProduction, ifNotProduction} = getIfUtils(process.env.NODE_ENV);
+const { ifProduction } = getIfUtils(process.env.NODE_ENV);
 
 module.exports = {
     mode: ifProduction('production', 'development'),
@@ -18,15 +17,16 @@ module.exports = {
      */
     entry: {
         'css/modularity-{{BPREPLACESLUG}}':               './source/sass/modularity-{{BPREPLACESLUG}}.scss',
-        'js/modularity-{{BPREPLACESLUG}}':               './source/js/modularity-{{BPREPLACESLUG}}.js',
+        'js/modularity-{{BPREPLACESLUG}}':                './source/js/modularity-{{BPREPLACESLUG}}.js',
     },
     
     /**
      * Output settings
      */
     output: {
-        filename: ifProduction('[name].min.js', '[name].min.js'),
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '',
     },
     /**
      * Define external dependencies here
@@ -46,21 +46,19 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 3, // 0 => no loaders (default); 1 => postcss-loader; 2 => sass-loader
-                            sourceMap: true,
                         },
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            // plugins: [autoprefixer, require('postcss-object-fit-images')],
-                            sourceMap: true,
-                        },
+                            postcssOptions: {
+                                plugins: [ autoprefixer ],
+                            }
+                        }
                     },
                     {
                         loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        }
+                        options: {}
                     },
                     'import-glob-loader'
                 ],
@@ -71,7 +69,7 @@ module.exports = {
         /**
          * Fix CSS entry chunks generating js file
          */
-        new FixStyleOnlyEntriesPlugin(),
+         new RemoveEmptyScripts(),
 
         /**
          * Clean dist folder
@@ -81,13 +79,13 @@ module.exports = {
          * Output CSS files
          */
         new MiniCssExtractPlugin({
-            filename: ifProduction('[name].min.css', '[name].min.css')
+            filename: '[name].[contenthash].css'
         }),
 
         /**
          * Output manifest.json for cache busting
          */
-        new ManifestPlugin({
+        new WebpackManifestPlugin({
             // Filter manifest items
             filter: function (file) {
                 // Don't include source maps
@@ -118,11 +116,6 @@ module.exports = {
         }),
 
         /**
-         * Required to enable sourcemap from node_modules assets
-         */
-        new webpack.SourceMapDevToolPlugin(),
-
-        /**
          * Enable build OS notifications (when using watch command)
          */
         new WebpackNotifierPlugin({alwaysNotify: true, skipFirstNotification: true}),
@@ -130,13 +123,18 @@ module.exports = {
         /**
          * Minimize CSS assets
          */
-        ifProduction(new OptimizeCssAssetsPlugin({
-            cssProcessorPluginOptions: {
-                preset: ['default', {discardComments: {removeAll: true}}],
+        ifProduction(new CssMinimizerWebpackPlugin({
+            minimizerOptions: {
+                preset: [
+                    "default",
+                    {
+                        discardComments: { removeAll: true },
+                    },
+                ],
             },
-        })),
+        }))
 
     ]).filter(Boolean),
-    devtool: ifProduction('none', 'eval-source-map'),
-    stats: {children: false}
+    devtool: 'source-map',
+    stats: { children: false }
 };

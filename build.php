@@ -8,7 +8,9 @@ if (php_sapi_name() !== 'cli') {
 // Any command needed to run and build plugin assets when newly cheched out of repo.
 $buildCommands = [
     'npm install --no-progress',
+    'npx browserslist@latest --update-db',
     'npm run build',
+    'composer install --prefer-dist --no-progress'
 ];
 
 // Files and directories not suitable for prod to be removed.
@@ -18,7 +20,7 @@ $removables = [
     '.github',
     'build.php',
     'composer.json',
-    'gulpfile.js',
+    'composer.lock',
     'webpack.config.js',
     'node_modules',
     'package-lock.json',

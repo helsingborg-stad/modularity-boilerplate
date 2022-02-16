@@ -1,10 +1,3 @@
----
-title: "README"
-date: 2021-05-27
-draft: false
-layout: default
----
-
 <!-- SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -23,13 +16,10 @@ layout: default
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
-- [About Modularity Boilerplate](#about-Modularity Boilerplate)
+- [About Modularity Boilerplate](#about-modularity-boilerplate)
   - [Built With](#built-with)
-- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Usage](#usage)
-- [Deploy](#deploy)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
