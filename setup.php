@@ -53,7 +53,7 @@ class Setup
             //Manually replacement targets
             self::updateFile(self::getBasePath() . 'package.json');
             self::updateFile(self::getBasePath() . 'composer.json');
-            self::updateFile(self::getBasePath() . 'webpack.config.json');
+            self::updateFile(self::getBasePath() . 'webpack.config.js');
             self::updateFile(self::getBasePath() . 'README-boilerplate.md');
 
             //Remove readme.md & replace with template
@@ -149,7 +149,7 @@ class Setup
         }
 
         if ($result) {
-            self::log("Successfully updated " . $filename);
+            self::log("Updated " . $filename);
         }
     }
 
