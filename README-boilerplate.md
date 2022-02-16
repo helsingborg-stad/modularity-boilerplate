@@ -1,45 +1,126 @@
-# Recommend for Modularity
-Display recommendated link list. Optionally enable rek.ai to autosuggest links related to current page. 
+---
+title: "README"
+date: 2021-05-27
+draft: false
+layout: default
+parent: Boilerplates
+---
+
+<!-- SHIELDS -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![License][license-shield]][license-url]
+
+<h3>{{BPREPLACENAME}}</h3>
+<p>
+  {{BPREPLACEDESCRIPTION}}
+  <br />
+  <a href="https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/issues">Report Bug</a>
+  ·
+  <a href="https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/issues">Request Feature</a>
+</p>
+
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [About {{BPREPLACENAME}}](#about-{{BPREPLACENAME}})
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Deploy](#deploy)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+## About {{BPREPLACENAME}}
+
+[![{{BPREPLACENAME}} Screen Shot][product-screenshot]](https://example.com)
+
+Here's a blank template to get started:
+
+### Built With
+
+* []()
+* []()
+* []()
 
 ## Getting Started
-Get the latest version and follow the installation steps bellow.
 
-### Dependencies
-Wordpress, Municipio and Modularity (version 3.0 or higher)
+To get a local copy up and running follow these simple steps.
 
-### Installing
-Get a development enviroment running by doing following:
+### Prerequisites
 
-Activate
-
+This is an example of how to list things you need to use the software and how to install them (mac os).
+* composer
+```sh
+brew install composer
 ```
-Activate plugin.
-Activate the module in modularity
-Add module to page or post
+* npm
+```sh
+brew install node
+```
+* modularity
+```sh
+composer require helsingborg-stad/modularity
+```
+### Installation
+
+1. Clone the repo
+```sh
+git clone https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.git
+```
+2. Install NPM and composer packages
+```sh
+php build.php
 ```
 
-Settings
+## Usage
 
-```
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
+_For more examples, please refer to the [Documentation](https://example.com)_
 
-```
-## Filters
+## Deploy
 
+Instructions for deploys.
 
+## Roadmap
 
-## Built With
+See the [open issues][issues-url] for a list of proposed features (and known issues).
 
-* PHP
+## Contributing
 
-## Releases
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-https://github.com/helsingborg-stad/modularity-recommend/releases
-
-## Authors
-
-* **Sebastian Thulin**
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+Distributed under the [MIT License][license-url].
+
+## Acknowledgements
+
+- [othneildrew Best README Template](https://github.com/othneildrew/Best-README-Template)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.svg?style=flat-square
+[contributors-url]: https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.svg?style=flat-square
+[forks-url]: https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/network/members
+[stars-shield]: https://img.shields.io/github/stars/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.svg?style=flat-square
+[stars-url]: https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/stargazers
+[issues-shield]: https://img.shields.io/github/issues/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.svg?style=flat-square
+[issues-url]: https://github.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/issues
+[license-shield]: https://img.shields.io/github/license/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}.svg?style=flat-square
+[license-url]: https://raw.githubusercontent.com/{{BPREPLACEGITHUB}}/modularity-{{BPREPLACESLUG}}/master/LICENSE
+[product-screenshot]: images/screenshot.png
