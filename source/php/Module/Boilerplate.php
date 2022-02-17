@@ -5,8 +5,8 @@ namespace {{BPREPLACENAMESPACE}}\Module;
 use {{BPREPLACENAMESPACE}}\Helper\CacheBust;
 
 /**
- * Class {{BPREPLACESLUGCAMELCASE}
- * @package {{BPREPLACESLUGCAMELCASE}\Module
+ * Class {{BPREPLACESLUGCAMELCASE}}
+ * @package {{BPREPLACESLUGCAMELCASE}}\Module
  */
 class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
 {
