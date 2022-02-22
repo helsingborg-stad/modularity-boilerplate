@@ -54,6 +54,7 @@ dist
 # track these files, if they exist
 !.gitignore
 !.editorconfig
+!.github
 
 # PHPUnit
 .phpunit.result.cache
