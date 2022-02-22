@@ -70,9 +70,9 @@ php setup.php
 ```sh
 composer install
 ```
-5. Install npm packages
+5. Install and build NPM packages
 ```sh
-npm install
+npm install && npm run build
 ```
 6. Build assets
 ```sh
