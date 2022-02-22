@@ -2,8 +2,6 @@
 
 namespace {{BPREPLACENAMESPACE}}\Module;
 
-use {{BPREPLACENAMESPACE}}\Helper\CacheBust;
-
 /**
  * Class {{BPREPLACESLUGCAMELCASE}}
  * @package {{BPREPLACESLUGCAMELCASE}}\Module
@@ -18,6 +16,8 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
         $this->nameSingular = __("{{BPREPLACESLUGCAMELCASE}}", 'modularity-{{BPREPLACESLUG}}');
         $this->namePlural = __("{{BPREPLACESLUGCAMELCASE}}", 'modularity-{{BPREPLACESLUG}}');
         $this->description = __("{{BPREPLACEDESCRIPTION}}", 'modularity-{{BPREPLACESLUG}}');
+
+        $this->cacheBust = new \{{BPREPLACENAMESPACE}}\Helper\CacheBust();
     }
 
     /**
@@ -26,12 +26,10 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
      */
     public function data(): array
     {
-        $data = array();
-
         //Append field config
-        $data = array_merge($data, (array) \Modularity\Helper\FormatObject::camelCase(
+        $data = (array) \Modularity\Helper\FormatObject::camelCase(
             get_fields($this->ID)
-        ));
+        );
 
         //Translations
         $data['lang'] = (object) array(
@@ -62,7 +60,7 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
         //Register custom css
         wp_register_style(
             'modularity-{{BPREPLACESLUG}}',
-            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . CacheBust::name('css/modularity-{{BPREPLACESLUG}}.css'),
+            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . $this->cacheBust->name('css/modularity-{{BPREPLACESLUG}}.css'),
             null,
             '1.0.0'
         );
@@ -80,7 +78,7 @@ class {{BPREPLACESLUGCAMELCASE}} extends \Modularity\Module
         //Register custom css
         wp_register_script(
             'modularity-{{BPREPLACESLUG}}',
-            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . CacheBust::name('js/modularity-{{BPREPLACESLUG}}.js'),
+            {{BPREPLACECAPSCONSTANT}}_URL . '/dist/' . $this->cacheBust->name('js/modularity-{{BPREPLACESLUG}}.js'),
             null,
             '1.0.0'
         );
