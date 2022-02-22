@@ -22,19 +22,15 @@ define('{{BPREPLACECAPSCONSTANT}}_PATH', plugin_dir_path(__FILE__));
 define('{{BPREPLACECAPSCONSTANT}}_URL', plugins_url('', __FILE__));
 define('{{BPREPLACECAPSCONSTANT}}_TEMPLATE_PATH', {{BPREPLACECAPSCONSTANT}}_PATH . 'templates/');
 define('{{BPREPLACECAPSCONSTANT}}_VIEW_PATH', {{BPREPLACECAPSCONSTANT}}_PATH . 'views/');
-define('{{BPREPLACECAPSCONSTANT}}_MODULE_VIEW_PATH', plugin_dir_path(__FILE__) . 'source/php/Module/views');
+define('{{BPREPLACECAPSCONSTANT}}_MODULE_VIEW_PATH', {{BPREPLACECAPSCONSTANT}}_PATH . 'source/php/Module/views');
 define('{{BPREPLACECAPSCONSTANT}}_MODULE_PATH', {{BPREPLACECAPSCONSTANT}}_PATH . 'source/php/Module/');
 
 load_plugin_textdomain('modularity-{{BPREPLACESLUG}}', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
-require_once {{BPREPLACECAPSCONSTANT}}_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
 require_once {{BPREPLACECAPSCONSTANT}}_PATH . 'Public.php';
 
-// Instantiate and register the autoloader
-$loader = new {{BPREPLACENAMESPACE}}\Vendor\Psr4ClassLoader();
-$loader->addPrefix('{{BPREPLACENAMESPACE}}', {{BPREPLACECAPSCONSTANT}}_PATH);
-$loader->addPrefix('{{BPREPLACENAMESPACE}}', {{BPREPLACECAPSCONSTANT}}_PATH . 'source/php/');
-$loader->register();
+// Register the autoloader
+require __DIR__ . '/vendor/autoload.php';
 
 // Acf auto import and export
 $acfExportManager = new \AcfExportManager\AcfExportManager();

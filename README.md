@@ -20,6 +20,7 @@
   - [Built With](#built-with)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Tests](#tests)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -65,9 +66,31 @@ nano setup.json
 ```sh
 php setup.php
 ```
-4. Install NPM and composer packages
+4. Install composer packages
 ```sh
-php build.php
+composer install
+```
+5. Install npm packages
+```sh
+npm install
+```
+6. Build assets
+```sh
+npm run build
+```
+### Tests
+
+1. Install composer packages
+```sh
+composer insall
+```
+2. Run unit tests
+```
+composer test
+```
+3. For code coverage
+```
+composer coverage
 ```
 
 ## Roadmap
